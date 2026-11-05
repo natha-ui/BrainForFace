@@ -2,12 +2,9 @@
 
 Can a single neuron in a small-world leaky integrate-and-fire (LIF) culture learn,
 without supervision, to fire for one person's face and nobody else's? The test is
-modelled on human "concept cells" (Quiroga et al. 2005). See `PROMPT.md` for the
-original prompts and the decisions made along the way.
+modelled on human "concept cells" (Quiroga et al. 2005).
 
-![poster](results/face_cells_poster.png)
-
-> Simulator results are not evidence about CL1 tissue.
+Developed during Outlier Labs Biocomputing Hackathon using simulated Cortical Labs CL1 
 
 ## Run it in VS Code
 
