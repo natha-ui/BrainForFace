@@ -73,23 +73,6 @@ CL_SDK_ACCELERATED_TIME=1 python face_cells/realtime.py --no-browser   # fast, n
    held-out photos, and is chosen on training photos. The report also gives z, SI,
    sparseness, AUC and a label-shuffle permutation test.
 
-## Reference result (`results/`, seed 42, 200 Hz bursts)
-
-Data: 124 photos of 3 people (personA 51, including hair down and glasses; personB 38;
-personC 35). Every third photo is held out. Counterbalanced order, 4 mV inhibition.
-
-* **STDP recruits ch34 as personA's cell:** z 8.1, AUC 0.73, permutation p 0.004.
-  The frozen control falls back on hub ch35, which fires for everyone. This is the most
-  repeatable finding: ch34 appeared in every run (both seeds, 200 and 250 Hz). It passed
-  the strict test (this person only, >5 SD, held-out poses incl. glasses) once, at 250 Hz
-  with seed 42 (z 7.8). Here it misses by 0.02 spikes.
-* **personC:** best cell ch36 (z 6.2) is not selective. **personB:** no cell (z ≤ 1).
-* **Real-time SDK check:** ch34 fires for personA (z 5.8) and stays below threshold for
-  others (personC 4.8), but personC's ch36 fires for every face, so verdicts are mixed.
-  Offline and real-time agree.
-* **Network stability:** 0 disrupted trials in every inhibited run.
-* **Caveats:** a few seeds and 3 people. Single-cell selectivity is fragile and can flip
-  with seed or presentation order. Treat this as a mechanism demo.
 
 ## Files
 `face_cells/encode.py` images and encoders · `culture.py` LIF wrapper, STDP, inhibition, safety ·
